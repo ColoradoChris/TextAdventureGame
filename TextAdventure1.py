@@ -10,10 +10,14 @@ setting = "You wake up to find yourself covered in blood. You remember you are o
 
 available_actions = "\n \n Actions: \n -Scream \n -Look Around \n -Try to Remember"
 
-for char in setting:
-    sys.stdout.write(char)
-    sys.stdout.flush()
-    time.sleep(0.07)
+def slow_print(text): #Function for slowly printing the text
+    for char in text:
+        sys.stdout.write(char)
+        sys.stdout.flush()
+        time.sleep(0.07)
+
+slow_print(setting) #Set the situation
+
 print(available_actions)
 
 action = input("What do you do?: ")
@@ -26,4 +30,3 @@ elif action == "Try to Remember":
 else:
     print("Please enter one of the provided commands")
     print(available_actions)
-    
